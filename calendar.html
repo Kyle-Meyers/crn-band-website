@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Council Rock North Bands</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="font-serif">
+    <div id="header"></div>
+
+    <main>
+        <iframe src="https://calendar.google.com/calendar/embed?src=c_aff1490269c3e76faffd4bf910b17e3e9d49764e866c85edfc048b257cee9899%40group.calendar.google.com&ctz=America%2FNew_York" class="scrollbar-none w-full aspect-[3/1]"></iframe>
+        <div class="flex items-center justify-center py-5 gap-2">
+            <p class="text-[#1A336E]">Link to add to Apple calendar:</p>
+            <a class="text-[#1A336E] hover:underline" href="https://calendar.google.com/calendar/ical/c_aff1490269c3e76faffd4bf910b17e3e9d49764e866c85edfc048b257cee9899%40group.calendar.google.com/public/basic.ics">Click here</a>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    
+    <script>
+        fetch("parts/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            });
+
+        fetch("parts/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+</body>
+</html>
